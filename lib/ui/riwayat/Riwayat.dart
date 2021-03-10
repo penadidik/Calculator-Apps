@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'RiwayatPresenter.dart';
 import 'RiwayatView.dart';
 
-class Home extends StatelessWidget {
+class Riwayat extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {

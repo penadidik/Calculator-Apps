@@ -68,6 +68,7 @@ flutter:
   assets:
     - assets/images/icon_splashscreen.png
     - assets/images/icon_app.png
+    - assets/images/icon_calculator.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

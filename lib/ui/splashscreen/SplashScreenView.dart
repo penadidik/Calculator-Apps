@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:calculator_apps/ui/home/Home.dart';
+import 'package:calculator_apps/ui/MainView.dart';
 import 'package:calculator_apps/util/AppRouter.dart';
 import 'package:calculator_apps/util/Assets.dart';
 import 'package:calculator_apps/util/Colors.dart';
@@ -22,7 +22,7 @@ class _SplashScreenPageState extends State<SplashScreenView> {
   }
 
   void _goRouter() {
-    AppsRouter.makeFirst(context, Home());
+    AppsRouter.makeFirst(context, MainView());
   }
 
   @override
@@ -34,7 +34,7 @@ class _SplashScreenPageState extends State<SplashScreenView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorsState.backgroundColor,
+      backgroundColor: Color(0xffFCE0A2),
       body: Container(
         child: Stack(
           children: [
