@@ -1,6 +1,5 @@
 import 'dart:async';
-
-import 'package:calculator_apps/ui/MainView.dart';
+import 'package:calculator_apps/ui/home/Home.dart';
 import 'package:calculator_apps/util/AppRouter.dart';
 import 'package:calculator_apps/util/Assets.dart';
 import 'package:calculator_apps/util/Colors.dart';
@@ -17,12 +16,12 @@ class SplashScreenView extends StatefulWidget {
 
 class _SplashScreenPageState extends State<SplashScreenView> {
   startTime() async {
-    var _duration = new Duration(seconds: 10);
+    var _duration = new Duration(seconds: 3);
     return new Timer(_duration, _goRouter);
   }
 
   void _goRouter() {
-    AppsRouter.makeFirst(context, MainView());
+    AppsRouter.makeFirst(context, Home());
   }
 
   @override

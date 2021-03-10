@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'HomePresenter.dart';
+import '../Presenter.dart';
 import 'HomeView.dart';
 
 class Home extends StatelessWidget {
@@ -11,7 +11,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: ChangeNotifierProvider(
-          create: (context) => HomePresenter(),
+          create: (context) => Presenter(),
           child: HomeView(),
         )
     );

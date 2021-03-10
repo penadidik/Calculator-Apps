@@ -1,8 +1,7 @@
+import 'package:calculator_apps/ui/Presenter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import 'AkunPresenter.dart';
 import 'AkunView.dart';
 
 class Akun extends StatelessWidget {
@@ -12,7 +11,7 @@ class Akun extends StatelessWidget {
     return Scaffold(
         body:
         ChangeNotifierProvider(
-          create: (context) => AkunPresenter(),
+          create: (context) => Presenter(),
           child: AkunView(pageTitle: "Akun"),
         )
     );

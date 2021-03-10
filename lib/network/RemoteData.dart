@@ -1,5 +1,7 @@
 //created by https://github.com/penadidik on March 7th 2021
+import 'package:calculator_apps/util/Preferences.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:toast/toast.dart';
 
 import 'model/BaseResponseModel.dart';
@@ -7,8 +9,9 @@ import 'model/BaseResponseModel.dart';
 class RemoteData{
   Map request = new Map<String, dynamic>();
   Map result = new Map();
+  Preferences preferences = new Preferences();
 
-  Future<Map> getData(BuildContext context, String keyword, String page, String pageSize, String idCategories, String sortBy, String orderBy) async {
+  void simpanRiwayat(BuildContext context, String firstNumber, String secondNumber, String result, int type) {
 
   }
 

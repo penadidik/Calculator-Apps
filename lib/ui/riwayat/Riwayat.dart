@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import 'RiwayatPresenter.dart';
+import '../Presenter.dart';
 import 'RiwayatView.dart';
 
 class Riwayat extends StatelessWidget {
@@ -12,7 +11,7 @@ class Riwayat extends StatelessWidget {
     return Scaffold(
         body:
         ChangeNotifierProvider(
-          create: (context) => RiwayatPresenter(),
+          create: (context) => Presenter(),
           child: RiwayatView(pageTitle: "Riwayat"),
         )
     );
