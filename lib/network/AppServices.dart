@@ -1,8 +1,11 @@
 //created by https://github.com/penadidik on March 7th 2021
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:calculator_apps/util/Constant.dart';
 import 'package:http/http.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:sqflite/sqflite.dart';
 
 import 'model/BaseResponseModel.dart';
 
@@ -24,6 +27,25 @@ class AppServices{
         return Future.value(result);
         break;
     }
+  }
+
+  Future<Database> sqLiteDb() async {
+    Directory directory = await getApplicationDocumentsDirectory();
+    String path = directory.path + 'sqLiteDb.db';
+    var todoDatabase = openDatabase(path, version: 1, onCreate: _createDb);
+    return todoDatabase;
+  }
+
+  void _createDb(Database db, int version) async {
+    await db.execute('''
+      CREATE TABLE history (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        firstNumber TEXT,
+        operator TEXT,
+        secondNumber TEXT,
+        result TEXT
+      )
+    ''');
   }
 
   BaseResponseModel convertToResponseModel(Response response){

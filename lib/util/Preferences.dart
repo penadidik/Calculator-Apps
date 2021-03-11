@@ -1,7 +1,4 @@
 //created by https://github.com/penadidik on March 7th 2021
-
-import 'package:calculator_apps/network/model/RiwayatModel.dart';
-import 'package:calculator_apps/network/model/RiwayatViewModel.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Preferences {
@@ -124,27 +121,6 @@ class Preferences {
   static Future<String> getTelp() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
     return pref.getString(KEY_TELEPHONE);
-  }
-
-  static void setRiwayat(RiwayatModel riwayat) async {
-    SharedPreferences pref = await SharedPreferences.getInstance();
-    List<String> riwayatModel = new List<String>();
-    getRiwayat().then((value){
-      value.forEach((element) {
-        riwayatModel.add(element.toString());
-      });
-    });
-    riwayatModel.add(riwayat.toString());
-    await pref.setStringList(KEY_HISTORY, riwayatModel);
-
-  }
-
-  static Future<List<RiwayatModel>> getRiwayat() async {
-    SharedPreferences pref = await SharedPreferences.getInstance();
-    List listString = pref.getStringList(KEY_HISTORY);
-    List<RiwayatModel> riwayatModel = new List<RiwayatModel>();
-    riwayatModel = listString.map((e) => RiwayatModel.fromJson(e)).toList();
-    Future.value(riwayatModel);
   }
 
   static void logout() async{
