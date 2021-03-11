@@ -10,10 +10,7 @@ class HistoryModel{
 
   HistoryModel.fromMap(Map<String, dynamic> map){
     id = map['id'];
-    firstNumber = map['firstNumber'];
-    operator = map['operator'];
-    secondNumber = map['secondNumber'];
-    result = map['result'];
+    firstNumber = map['result'];
   }
 
   int get _id => id;

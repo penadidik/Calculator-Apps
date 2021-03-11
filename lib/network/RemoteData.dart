@@ -10,7 +10,7 @@ import 'package:toast/toast.dart';
 import 'model/BaseResponseModel.dart';
 
 class RemoteData{
-  static const todoTable = 'riwayat';
+  static const todoTable = 'history';
   static const id = 'id';
   static const firstNumber = 'firstNumber';
   static const operator = 'operator';
@@ -52,6 +52,7 @@ class RemoteData{
     ''';
     List<dynamic> params = [historyModel.id];
     final result = await db.rawDelete(sql, params);
+    print(result);
     return result;
   }
 

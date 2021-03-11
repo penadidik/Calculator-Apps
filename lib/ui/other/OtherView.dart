@@ -1,33 +1,25 @@
-import 'dart:async';
-
-import 'package:calculator_apps/ui/Presenter.dart';
 import 'package:calculator_apps/util/Assets.dart';
 import 'package:calculator_apps/util/Colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-import 'Home.dart';
-import 'calculator/CalculatorAdapter.dart';
-import 'calculator/CalculatorModel.dart';
+import '../Presenter.dart';
 
-class HomeView extends StatefulWidget {
+class OtherView extends StatefulWidget {
   String pageTitle = "";
 
-  HomeView({Key key, this.pageTitle}): super(key: key);
+  OtherView({this.pageTitle});
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _OtherPageState createState() => _OtherPageState();
 }
 
-class _HomePageState extends State<HomeView> {
-
+class _OtherPageState extends State<OtherView> {
   Presenter presenter;
 
   @override
   void initState() {
     presenter = new Presenter();
-    presenter.start(this);
     super.initState();
   }
 
@@ -53,8 +45,6 @@ class _HomePageState extends State<HomeView> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Display(value: presenter.output, height: displayHeight),
-              KeyPad()
             ],
           ),
         ),
@@ -68,16 +58,13 @@ class _HomePageState extends State<HomeView> {
             onTap: (index) {
               switch (index) {
                 case 0:
-                  presenter.page = 0;
-                  setState(() {});
+                  presenter.openPage(0, context);
                   break;
                 case 1:
-                  presenter.page = 1;
-                  setState(() {});
+                  presenter.openPage(1, context);
                   break;
                 case 2:
-                  presenter.page = 2;
-                  setState(() {});
+                  presenter.openPage(2, context);
                   break;
               }
             },

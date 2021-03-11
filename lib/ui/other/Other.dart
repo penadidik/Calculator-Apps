@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../Presenter.dart';
-import 'RiwayatView.dart';
+import 'OtherView.dart';
 
-class Riwayat extends StatelessWidget {
+class Other extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class Riwayat extends StatelessWidget {
         body:
         ChangeNotifierProvider(
           create: (context) => Presenter(),
-          child: RiwayatView(pageTitle: "Riwayat"),
+          child: OtherView(pageTitle: "Other"),
         )
     );
   }

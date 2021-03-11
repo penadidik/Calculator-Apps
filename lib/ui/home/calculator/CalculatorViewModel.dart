@@ -28,7 +28,6 @@ class CalculatorViewModel {
   static dispose() => _controller.close();
 
   static process(dynamic event) {
-
     CalculatorKey key = (event as KeyEvent).key;
     switch(key.symbol.type) {
 
@@ -72,8 +71,8 @@ class CalculatorViewModel {
   static void handleInteger(CalculatorKey key) {
 
     String val = key.symbol.value;
-    if (_operator == null) { _valA = (_valA == '0') ? val : _valA + val; Presenter().saveRiwayat(0, val); }
-    else { _valB = (_valB == '0') ? val : _valB + val; Presenter().saveRiwayat(2, val); }
+    if (_operator == null) { _valA = (_valA == '0') ? val : _valA + val; }
+    else { _valB = (_valB == '0') ? val : _valB + val; }
     refresh();
   }
 
@@ -122,7 +121,6 @@ class CalculatorViewModel {
     }
 
     _result = str;
-    Presenter().saveRiwayat(3, str);
     refresh();
   }
 
